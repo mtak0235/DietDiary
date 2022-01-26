@@ -33,9 +33,9 @@ repositories {
 }
 
 dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation group: 'com.google.apis', name: 'google-api-services-dialogflow', version: 'v2-rev124-1.25.0'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group: 'com.google.apis', name: 'google-api-services-dialogflow', version: 'v3-rev20211231-1.32.1'
-	compileOnly( group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1')
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
