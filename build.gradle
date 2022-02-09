@@ -38,6 +38,8 @@ dependencies {
 	implementation group: 'com.google.apis', name: 'google-api-services-dialogflow', version: 'v2-rev124-1.25.0'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+	implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
+	implementation 'junit:junit:4.13.1'
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -48,5 +50,9 @@ dependencies {
 apply plugin: "com.google.cloud.tools.jib"
 
 tasks.named('test') {
+	useJUnitPlatform()
+}
+
+test {
 	useJUnitPlatform()
 }
